@@ -1,0 +1,14 @@
+on:
+  merge:
+    branches:
+    - master
+  pull_request:
+    branches:
+    - master
+    
+name: Pre-build dev container image
+  uses: devcontainers/ci@v0.3
+  with:
+    imageName: ghcr.io/rebel-state/rebel-base
+    cacheFrom: ghcr.io/rebel-state/rebel-base
+    push: always
